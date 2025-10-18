@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Line Jump - Game Garis Bilangan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="justify-center">
+    <div class="game-container my-auto">
+        <h1>Line Jump</h1>
+        <p class="subtitle">Melompatlah maju atau mundur sesuai instruksi untuk melatih kemampuan operasi bilangan bulatmu!</p>
+
+        <div class="game-info">
+            <div class="info-item">
+                <div class="info-label">Langkah</div>
+                <div class="info-value" id="currentStep">0/8</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Benar</div>
+                <div class="info-value" id="correctCount">0</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Posisi</div>
+                <div class="info-value" id="currentPosition">-10</div>
+            </div>
+        </div>
+
+        <div class="number-line-wrapper">
+            <div class="number-line-container">
+                <div class="number-line" id="numberLine">
+                    <div class="line"></div>
+                    <div class="player" id="player">🎯</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="instruction-box" id="instructionBox">
+            <div class="instruction-title">Selamat Datang!</div>
+            <div class="instruction-text">Tekan "Mulai Permainan" untuk memulai</div>
+        </div>
+
+        <div class="controls">
+            <button class="btn btn-primary" id="startBtn" onclick="startGame()">Mulai Permainan</button>
+        </div>
+
+        <div class="movement-buttons" id="movementButtons" style="display: none;">
+        </div>
+    </div>
+
+    <div class="modal" id="resultModal">
+        <div class="modal-content">
+            <div class="modal-title">🎉 Permainan Selesai!</div>
+            <div class="score-display">Instruksi Benar: <strong id="finalScore">0</strong> dari 8</div>
+            <div class="level-badge" id="levelBadge">Level</div>
+            <div class="modal-text"><strong>Kode Akses</strong></div>
+            <div class="access-code" id="accessCode">PB1017</div>
+            <div class="modal-text">Silakan dihapal atau dicatat agar tidak lupa</div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
